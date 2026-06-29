@@ -82,7 +82,7 @@ export const styles = StyleSheet.create({
     biometricRow: {
         flexDirection: 'row',
         alignItems: 'center',
-        marginTop: verticalScale(16),
+       marginBottom: verticalScale(16),
     },
     biometricText: {
         fontSize: moderateScale(13),

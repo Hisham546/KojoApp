@@ -14,9 +14,9 @@ const CreditHistory = () => {
         { value: 710, label: 'Apr' },
         { value: 750, label: 'May' },
     ];
-
-
-    const dynamicSpacing = (screenWidth - scale(110)) / 4;
+    const cardWidth = screenWidth - scale(40);
+    const chartWidth = cardWidth - scale(65);
+    const dynamicSpacing = chartWidth / 4;
 
     return (
         <View style={styles.container}>
@@ -61,7 +61,7 @@ const styles = StyleSheet.create({
         borderRadius: scale(28),
         paddingVertical: verticalScale(24),
         paddingHorizontal: scale(8),
-
+ overflow: 'hidden',
     },
     title: {
         fontSize: moderateScale(16),
@@ -77,7 +77,7 @@ const styles = StyleSheet.create({
     axisText: {
         color: '#666666D9',
         fontSize: moderateScale(11),
-          fontFamily: fontFamily.P_REGULAR,
+        fontFamily: fontFamily.P_REGULAR,
     },
 });
 

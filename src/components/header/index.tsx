@@ -2,6 +2,7 @@ import React, { ComponentProps } from 'react';
 import { StyleSheet, Text, View, Pressable } from 'react-native';
 import Ionicons from '@react-native-vector-icons/ionicons';
 import { scale, verticalScale, moderateScale } from 'react-native-size-matters';
+import fontFamily from '../../themes/fontFamily';
 
 
 type IoniconName = ComponentProps<typeof Ionicons>['name'];
@@ -40,7 +41,6 @@ const Header: React.FC<HeaderProps> = ({
 const styles = StyleSheet.create({
     headerContainer: {
         flexDirection: 'row',
-        justifyContent: 'space-between',
         alignItems: 'center',
         paddingHorizontal: scale(20),
         paddingVertical: verticalScale(12),
@@ -55,11 +55,16 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         borderWidth: 1,
         borderColor: '#EAEFF5',
+        top: verticalScale(5)
     },
     headerTitle: {
-        fontSize: moderateScale(18),
-        fontWeight: '700',
-        color: '#111111',
+        flex: 1,
+        marginLeft: scale(12),
+        fontSize: moderateScale(20),
+        fontFamily: fontFamily.P_MEDIUM,
+        color: '#000000',
+        textAlign: 'left',
+         top: verticalScale(5)
     },
     buttonPressed: {
         opacity: 0.7,

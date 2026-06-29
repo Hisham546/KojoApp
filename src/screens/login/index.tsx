@@ -77,9 +77,9 @@ const LoginScreen = ({ navigation }: Props) => {
     };
 
     const handleLogin = () => {
-        // if (!validateForm()) {
-        //     return;
-        // }
+        if (!validateForm()) {
+            return;
+        }
         login({
             firstName,
             lastName,
@@ -109,7 +109,6 @@ const LoginScreen = ({ navigation }: Props) => {
                         />
                         <Text style={styles.tagline}>Ally in Debt</Text>
                     </View>
-
                     <PhoneInput
                         label="Phone Number"
                         countryCode={countryCode}
@@ -119,27 +118,24 @@ const LoginScreen = ({ navigation }: Props) => {
                         placeholder="Enter Your Phone Number"
                         error={phoneError}
                     />
-
                     <Input
                         label="First Name"
-                        placeholder="Enter Your Email"
+                        placeholder="Enter Your First Name"
                         value={firstName}
                         onChangeText={setFirstName}
                         autoCapitalize="words"
                         autoCorrect={false}
                         error={firstNameError}
                     />
-
                     <Input
                         label="Last Name"
-                        placeholder="Enter Your Email"
+                        placeholder="Enter Your Last Name"
                         value={lastName}
                         onChangeText={setLastName}
                         autoCapitalize="words"
                         autoCorrect={false}
                         error={lastNameError}
                     />
-
                     <Input
                         label="Email Address"
                         placeholder="Enter Your Email"
@@ -149,11 +145,9 @@ const LoginScreen = ({ navigation }: Props) => {
                         autoCapitalize="none"
                         autoCorrect={false}
                         error={emailError}
-
                     />
                     <Pressable
                         style={styles.biometricRow}
-
                     >
                         <Ionicons
                             name="finger-print-outline"
@@ -162,14 +156,12 @@ const LoginScreen = ({ navigation }: Props) => {
                         />
                         <Text style={styles.biometricText}>Use Biometric Login</Text>
                     </Pressable>
-
                     <ButtonComponent
                         buttonText="Log In"
                         textStyle={styles.buttonText}
                         buttonStyle={styles.button}
                         onPress={handleLogin}
                     />
-
                     <View style={styles.rememberMeRow}>
                         <Text style={styles.rememberMeText}>Keep me logged in</Text>
                         <Switch
@@ -180,7 +172,6 @@ const LoginScreen = ({ navigation }: Props) => {
                             value={keepLoggedIn}
                         />
                     </View>
-
                     <View style={styles.signUpFooter}>
                         <Text style={styles.footerNormalText}>Don't have an account ? </Text>
                         <Pressable >

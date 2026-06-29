@@ -75,7 +75,6 @@ const CreditScoreCard = () => {
             <Svg
                 width={WIDTH}
                 height={HEIGHT}>
-
                 <Defs>
                     <LinearGradient
                         id="gradient"
@@ -137,11 +136,9 @@ const CreditScoreCard = () => {
                 <Text style={styles.status}>
                     Good
                 </Text>
-
                 <Text style={styles.score}>
                     {SCORE}
                 </Text>
-
                 <Text style={styles.points}>
                     +6pts
                 </Text>
@@ -151,7 +148,6 @@ const CreditScoreCard = () => {
                 <Text style={styles.range}>
                     400
                 </Text>
-
                 <View style={styles.date}>
                     <Ionicons
                         name="calendar-outline"
@@ -181,20 +177,20 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         justifyContent: 'center',
         width: '100%',
-
     },
     scoreContainer: {
         position: 'absolute',
-        top: verticalScale(70),
+        top: verticalScale(82),
         left: 0,
         right: 0,
         alignItems: 'center',
-    },
 
+    },
     status: {
         fontSize: moderateScale(15),
         fontFamily: fontFamily.P_REGULAR,
         color: '#6F6F82',
+         top: verticalScale(5),
     },
     score: {
         fontSize: moderateScale(48),
@@ -205,7 +201,7 @@ const styles = StyleSheet.create({
         fontSize: moderateScale(16),
         fontFamily: fontFamily.P_REGULAR,
         color: '#24C75A',
-
+        bottom: verticalScale(8)
     },
 
     footer: {
@@ -213,6 +209,7 @@ const styles = StyleSheet.create({
         flexDirection: 'row',
         justifyContent: 'space-between',
         alignItems: 'center',
+        bottom: verticalScale(8)
     },
     date: {
         flexDirection: 'row',
@@ -222,7 +219,7 @@ const styles = StyleSheet.create({
         marginLeft: scale(5),
         color: '#8D8D98',
         fontSize: moderateScale(13),
-          fontFamily: fontFamily.P_REGULAR,
+        fontFamily: fontFamily.P_REGULAR,
     },
     range: {
         fontSize: moderateScale(16),
