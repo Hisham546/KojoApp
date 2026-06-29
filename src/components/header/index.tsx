@@ -59,7 +59,7 @@ const styles = StyleSheet.create({
     },
     headerTitle: {
         flex: 1,
-        marginLeft: scale(12),
+        marginLeft: scale(16),
         fontSize: moderateScale(20),
         fontFamily: fontFamily.P_MEDIUM,
         color: '#000000',

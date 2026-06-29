@@ -61,7 +61,7 @@ const styles = StyleSheet.create({
         borderRadius: scale(28),
         paddingVertical: verticalScale(24),
         paddingHorizontal: scale(8),
- overflow: 'hidden',
+        overflow: 'hidden',
     },
     title: {
         fontSize: moderateScale(16),

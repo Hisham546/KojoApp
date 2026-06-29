@@ -184,7 +184,6 @@ const styles = StyleSheet.create({
         left: 0,
         right: 0,
         alignItems: 'center',
-
     },
     status: {
         fontSize: moderateScale(15),

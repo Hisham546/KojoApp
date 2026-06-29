@@ -63,7 +63,6 @@ const MessageScreen = ({ navigation }: Props) => {
           style={styles.mainCardContainer}
           showsVerticalScrollIndicator={false}
 
-
           ListHeaderComponent={
             <View style={styles.cardHeaderGroup}>
               <View style={styles.searchContainer}>
