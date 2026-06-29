@@ -20,6 +20,7 @@ const PhoneInput: React.FC<PhoneInputProps> = ({
   onCountryCodeChange,
   phoneNumber,
   onPhoneNumberChange,
+  error,
   placeholder = 'Phone number',
 }) => {
   const [isCountryModalVisible, setIsCountryModalVisible] = useState(false);
@@ -33,7 +34,7 @@ const PhoneInput: React.FC<PhoneInputProps> = ({
   };
 
   return (
-    <View style={{ marginBottom: verticalScale(10),}}>
+    <View style={{ marginBottom: verticalScale(10), }}>
       {label ? <Text style={styles.label}>{label}</Text> : null}
 
       <View style={styles.row}>
@@ -57,6 +58,9 @@ const PhoneInput: React.FC<PhoneInputProps> = ({
           autoCorrect={false}
         />
       </View>
+      {error ? (
+        <Text style={styles.errorText}>{error}</Text>
+      ) : null}
 
       <Modal
         visible={isCountryModalVisible}

@@ -4,14 +4,14 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import OnboardingScreen from '../screens/onboarding';
 import LoginScreen from '../screens/login';
 import BottomTabNavigator from './bottomTabs';
+import { RootStackParamList } from './modals';
 
-const Stack = createNativeStackNavigator();
+const Stack = createNativeStackNavigator<RootStackParamList>();
 
 const MainNavigation = () => {
 
     return (
         <NavigationContainer>
-
             <Stack.Navigator>
                   <Stack.Screen
                     options={{ headerShown: false }}
@@ -26,8 +26,6 @@ const MainNavigation = () => {
                     name="BottomTabs"
                     component={BottomTabNavigator}
                 />
-              
-
             </Stack.Navigator>
         </NavigationContainer>
     )

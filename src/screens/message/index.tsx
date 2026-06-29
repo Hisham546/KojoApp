@@ -5,22 +5,30 @@ import Ionicons from '@react-native-vector-icons/ionicons';
 import Header from '../../components/header';
 import { Images } from '../../assets/images';
 import { styles } from './styles';
+import { NativeStackScreenProps } from '@react-navigation/native-stack';
+import { RootStackParamList } from '../../navigation/modals';
 
-const MessageScreen = ({ navigation }) => {
+type Props = NativeStackScreenProps<
+  RootStackParamList,
+  'Message'
+>;
+
+const MessageScreen = ({ navigation }: Props) => {
+
   const conversations = [
     {
       id: '1',
       title: 'Premium Credit Solutions',
       subtitle: 'Payment confirmed! Your receipt will arrive in your email shortly.',
       time: '2hr ago',
-      statusColor: '#10B981', 
+      statusColor: '#10B981',
     },
     {
       id: '2',
       title: 'Standard Payment Services',
       subtitle: "We got your request. It's under review and you'll be notified once approved.",
       time: '2day ago',
-      statusColor: '#F59E0B', 
+      statusColor: '#F59E0B',
     },
     {
       id: '3',
@@ -52,16 +60,16 @@ const MessageScreen = ({ navigation }) => {
           data={conversations}
           keyExtractor={(item) => item.id}
           contentContainerStyle={styles.innerCardContent}
-          style={styles.mainCardContainer} 
+          style={styles.mainCardContainer}
           showsVerticalScrollIndicator={false}
-          
-         
+
+
           ListHeaderComponent={
             <View style={styles.cardHeaderGroup}>
               <View style={styles.searchContainer}>
                 <Ionicons name="search-outline" size={18} color="#A0AEC0" style={styles.searchIcon} />
-                <TextInput 
-                  placeholder="Search Your messages" 
+                <TextInput
+                  placeholder="Search Your messages"
                   placeholderTextColor="#A0AEC0"
                   style={styles.searchInput}
                 />
@@ -69,7 +77,7 @@ const MessageScreen = ({ navigation }) => {
               <Text style={styles.sectionHeader}>Today</Text>
             </View>
           }
-          
+
           renderItem={({ item, index }) => {
             const isLast = index === conversations.length - 1;
             return (

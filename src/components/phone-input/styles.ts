@@ -51,7 +51,7 @@ const styles = StyleSheet.create({
     borderRadius: moderateScale(12),
     paddingHorizontal: scale(16),
     fontSize: moderateScale(13),
-    fontFamily:fontFamily.P_REGULAR,
+    fontFamily: fontFamily.P_REGULAR,
     color: '#000000',
   },
   modalOverlay: {
@@ -87,6 +87,11 @@ const styles = StyleSheet.create({
   },
   countryOptionDialCode: {
     color: '#666666',
+  },
+  errorText: {
+    color: '#EF4444',
+    fontSize: moderateScale(12),
+    marginTop: verticalScale(4),
   },
 });
 

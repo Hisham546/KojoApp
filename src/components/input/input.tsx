@@ -7,6 +7,7 @@ import styles from './styles';
 const Input: React.FC<InputProps> = ({
   label,
   style,
+  error,
   placeholderTextColor = '#999999',
   ...rest
 }) => {
@@ -18,6 +19,9 @@ const Input: React.FC<InputProps> = ({
         placeholderTextColor={placeholderTextColor}
         {...rest}
       />
+      {error ? (
+        <Text style={styles.errorText}>{error}</Text>
+      ) : null}
     </View>
   );
 };

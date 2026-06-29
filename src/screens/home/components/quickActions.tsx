@@ -1,12 +1,20 @@
-import React from 'react';
+import React, { ComponentProps } from 'react';
 import { View, Text, StyleSheet, Pressable } from 'react-native';
 import { scale, verticalScale, moderateScale } from 'react-native-size-matters';
 import Ionicons from '@react-native-vector-icons/ionicons';
 import fontFamily from '../../../themes/fontFamily';
 
+type IoniconName = ComponentProps<typeof Ionicons>['name'];
+interface ActionItem {
+  id: string;
+  title: string;
+  icon: IoniconName;
+  iconColor: string;
+  bgColor: string;
+}
 const QuickActions = () => {
 
-    const actions = [
+   const actions: ActionItem[] = [
         {
             id: 'pay',
             title: 'Pay\nMoney',

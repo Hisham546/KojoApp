@@ -11,4 +11,5 @@ export interface PhoneInputProps {
   phoneNumber: string;
   onPhoneNumberChange: (value: string) => void;
   placeholder?: string;
+  error?: string
 }

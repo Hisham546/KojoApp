@@ -1,6 +1,6 @@
 import { StyleSheet } from 'react-native';
 import fontFamily from '../../themes/fontFamily';
-import { moderateScale } from 'react-native-size-matters';
+import { moderateScale, verticalScale } from 'react-native-size-matters';
 
 const styles = StyleSheet.create({
   container: {
@@ -24,6 +24,11 @@ const styles = StyleSheet.create({
     fontFamily: fontFamily.P_REGULAR,
     color: '#000000',
     width: '100%',
+  },
+  errorText: {
+    color: '#EF4444',
+    fontSize: moderateScale(12),
+    marginTop: verticalScale(4),
   },
 });
 

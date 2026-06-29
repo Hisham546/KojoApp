@@ -1,9 +1,23 @@
-import React from 'react';
+import React, { ComponentProps } from 'react';
 import { StyleSheet, Text, View, Pressable } from 'react-native';
 import Ionicons from '@react-native-vector-icons/ionicons';
 import { scale, verticalScale, moderateScale } from 'react-native-size-matters';
 
-const Header = ({ title, onBackPress, onRightPress, rightIcon = "chevron-forward" }) => {
+
+type IoniconName = ComponentProps<typeof Ionicons>['name'];
+
+interface HeaderProps {
+    title: string;
+    onBackPress: () => void;
+    onRightPress: () => void;
+    rightIcon?: IoniconName;
+}
+const Header: React.FC<HeaderProps> = ({
+    title,
+    onBackPress,
+    onRightPress,
+    rightIcon = 'chevron-forward',
+}) => {
     return (
         <View style={styles.headerContainer}>
             <Pressable

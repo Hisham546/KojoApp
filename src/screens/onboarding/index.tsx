@@ -6,8 +6,16 @@ import { styles } from './styles';
 import { Images } from '../../assets/images';
 import Ionicons from '@react-native-vector-icons/ionicons';
 import { moderateScale } from 'react-native-size-matters';
+import { NativeStackScreenProps } from '@react-navigation/native-stack';
+import { RootStackParamList } from '../../navigation/modals';
 
-const OnboardingScreen = ({ navigation }) => {
+type Props = NativeStackScreenProps<
+  RootStackParamList,
+  'Onboarding'
+>;
+
+
+const OnboardingScreen = ({ navigation }: Props) => {
   return (
     <SafeAreaView style={styles.container}>
       <View style={styles.imageContainer}>

@@ -9,7 +9,12 @@ import { scale, moderateScale, verticalScale } from 'react-native-size-matters';
 import { Images } from '../../assets/images';
 import fontFamily from '../../themes/fontFamily';
 
-const Tab = createBottomTabNavigator();
+type BottomTabParamList = {
+    Home: undefined;
+    Message: undefined;
+    Profile: undefined;
+};
+const Tab = createBottomTabNavigator<BottomTabParamList>();
 
 const BottomTabNavigator = () => {
     return (
@@ -22,8 +27,6 @@ const BottomTabNavigator = () => {
                 tabBarIcon: ({ focused }) => {
                     return (
                         <View style={styles.iconContainer}>
-
-
                             {route.name === 'Profile' ? (
                                 <Image
                                     source={Images.userAvatar}
@@ -40,7 +43,6 @@ const BottomTabNavigator = () => {
                                     color={focused ? '#3467F6' : '#9CA3AF'}
                                 />
                             )}
-
                             {focused && (
                                 <Text
                                     numberOfLines={1}
@@ -61,8 +63,6 @@ const BottomTabNavigator = () => {
 };
 
 const styles = StyleSheet.create({
-
-
     tabBar: {
         position: 'absolute',
         left: scale(16),
@@ -91,8 +91,6 @@ const styles = StyleSheet.create({
         height: '100%',
         width: '100%',
         top: verticalScale(15)
-
-
     },
     activeLabel: {
         fontSize: moderateScale(15),

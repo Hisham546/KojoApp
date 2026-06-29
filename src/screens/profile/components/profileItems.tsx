@@ -1,11 +1,38 @@
-import React from 'react';
+import React, { ComponentProps } from 'react';
 import { StyleSheet, Text, View, Switch } from 'react-native';
 import Ionicons from '@react-native-vector-icons/ionicons';
 import { scale, verticalScale, moderateScale } from 'react-native-size-matters';
 import fontFamily from '../../../themes/fontFamily';
 
-// 1. Component for Data Fields (Email, Phone, etc.)
-export const ProfileInfoRow = ({ icon, iconColor, iconBg, label, value, isLast }) => (
+type IoniconName = ComponentProps<typeof Ionicons>['name'];
+
+interface ProfileInfoRowProps {
+    icon: IoniconName;
+    iconColor: string;
+    iconBg: string;
+    label: string;
+    value: string;
+    isLast?: boolean;
+}
+
+interface ProfileToggleRowProps {
+    icon: IoniconName;
+    iconColor: string;
+    iconBg: string;
+    label: string;
+    subtext: string;
+    value: boolean;
+    onValueChange: (value: boolean) => void;
+    isLast?: boolean;
+}
+export const ProfileInfoRow: React.FC<ProfileInfoRowProps> = ({
+    icon,
+    iconColor,
+    iconBg,
+    label,
+    value,
+    isLast,
+}) => (
     <View style={[styles.infoRow, isLast && styles.noBorder]}>
         <View style={[styles.iconWrapper, { backgroundColor: iconBg }]}>
             <Ionicons name={icon} size={moderateScale(18)} color={iconColor} />
@@ -17,8 +44,17 @@ export const ProfileInfoRow = ({ icon, iconColor, iconBg, label, value, isLast }
     </View>
 );
 
-// 2. Component for Switch Settings (Face ID, Fingerprint, etc.)
-export const ProfileToggleRow = ({ icon, iconColor, iconBg, label, subtext, value, onValueChange, isLast }) => (
+
+export const ProfileToggleRow: React.FC<ProfileToggleRowProps> = ({
+    icon,
+    iconColor,
+    iconBg,
+    label,
+    subtext,
+    value,
+    onValueChange,
+    isLast,
+}) => (
     <View style={[styles.toggleRow, isLast && styles.noBorder]}>
         <View style={styles.toggleLeftGroup}>
             <View style={[styles.iconWrapper, { backgroundColor: iconBg }]}>
