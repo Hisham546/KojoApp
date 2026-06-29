@@ -8,24 +8,27 @@ import QuickActions from './components/quickActions';
 import CreditHistory from './components/creditHistoryCard';
 import FloatingButton from './components/floatingButton';
 import { styles } from './styles';
+import { useAuthStore } from '../../store/authSTore';
 
 const HomeScreen = () => {
+  const user = useAuthStore(state => state.user);
+
   const handleNotificationPress = () => {
-    console.log('Notification button pressed');
+
   };
 
   return (
     <SafeAreaView style={styles.container} edges={['top', 'left', 'right']}>
-  
+
       <ScrollView
-      bounces={false}
+        bounces={false}
         showsVerticalScrollIndicator={false}
         contentContainerStyle={styles.scrollContent}
       >
         <View style={styles.headerContainer}>
           <View style={styles.welcomeTextWrapper}>
             <Text style={styles.greetingText}>
-              Hi,Sarah
+              Hi,{user?.firstName}
             </Text>
             <Text style={styles.subtitleText}>
               Your credit is in excellent shape!

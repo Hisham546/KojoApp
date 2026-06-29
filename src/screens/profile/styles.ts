@@ -4,13 +4,14 @@ import fontFamily from '../../themes/fontFamily';
 export const styles = StyleSheet.create({
   container: {
     flex: 1,
-       backgroundColor: '#e4ebfe',
+    backgroundColor: '#e4ebfe',
   },
   scrollContent: {
     paddingHorizontal: scale(20),
     paddingBottom: verticalScale(40),
     backgroundColor: 'white',
     borderRadius: moderateScale(24),
+    top: verticalScale(11)
   },
   avatarSection: {
     alignItems: 'center',
@@ -29,11 +30,10 @@ export const styles = StyleSheet.create({
     width: scale(110),
     height: scale(110),
     borderRadius: scale(55),
-
   },
   profileName: {
     fontSize: moderateScale(20),
-    fontFamily:fontFamily.P_MEDIUM,
+    fontFamily: fontFamily.P_MEDIUM,
     color: '#111111',
     marginTop: verticalScale(12),
   },
@@ -46,7 +46,6 @@ export const styles = StyleSheet.create({
   },
   cardContainer: {
     backgroundColor: '#FFFFFF',
-
     paddingHorizontal: scale(16),
     paddingVertical: verticalScale(8),
 

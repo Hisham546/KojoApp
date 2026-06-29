@@ -38,18 +38,17 @@ export const styles = StyleSheet.create({
         width: scale(180),
         height: verticalScale(80),
     },
-
     tagline: {
         marginTop: verticalScale(8),
-        fontSize: moderateScale(16),
-        fontWeight: '600',
-        color: '#2563EB', // Blue
+        fontSize: moderateScale(20),
+        fontFamily: fontFamily.P_REGULAR,
+        color: '#346AFD',
     },
     logoContainer: {
         alignItems: 'center',
-        justifyContent:'flex-end',
-        height:verticalScale(150),
-        marginBottom: verticalScale(32),
+        justifyContent: 'flex-end',
+        height: verticalScale(200),
+        marginBottom: verticalScale(22),
     },
     rememberMeRow: {
         flexDirection: 'row',
@@ -92,6 +91,6 @@ export const styles = StyleSheet.create({
         marginLeft: scale(8),
     },
     scrollContent: {
-    paddingBottom: verticalScale(20),
+        paddingBottom: verticalScale(20),
     },
 });

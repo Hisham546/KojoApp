@@ -77,9 +77,9 @@ const LoginScreen = ({ navigation }: Props) => {
     };
 
     const handleLogin = () => {
-        if (!validateForm()) {
-            return;
-        }
+        // if (!validateForm()) {
+        //     return;
+        // }
         login({
             firstName,
             lastName,
@@ -151,7 +151,6 @@ const LoginScreen = ({ navigation }: Props) => {
                         error={emailError}
 
                     />
-
                     <Pressable
                         style={styles.biometricRow}
 

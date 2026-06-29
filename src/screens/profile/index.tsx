@@ -19,8 +19,9 @@ const ProfileScreen = ({ navigation }: Props) => {
   const [faceIdEnabled, setFaceIdEnabled] = useState(false);
   const [fingerprintEnabled, setFingerprintEnabled] = useState(false);
 
-
   const user = useAuthStore(state => state.user);
+
+  
   return (
     <SafeAreaView style={styles.container} edges={['top']}>
       <Header
