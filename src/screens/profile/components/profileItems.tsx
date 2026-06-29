@@ -2,6 +2,7 @@ import React from 'react';
 import { StyleSheet, Text, View, Switch } from 'react-native';
 import Ionicons from '@react-native-vector-icons/ionicons';
 import { scale, verticalScale, moderateScale } from 'react-native-size-matters';
+import fontFamily from '../../../themes/fontFamily';
 
 // 1. Component for Data Fields (Email, Phone, etc.)
 export const ProfileInfoRow = ({ icon, iconColor, iconBg, label, value, isLast }) => (
@@ -68,14 +69,14 @@ const styles = StyleSheet.create({
         flex: 1,
     },
     infoLabel: {
-        fontSize: moderateScale(12),
-        color: '#7C8087',
-        fontWeight: '500',
+        fontSize: moderateScale(13),
+        color: '#222222',
+        fontFamily: fontFamily.P_REGULAR
     },
     infoValue: {
-        fontSize: moderateScale(13),
-        color: '#111111',
-        fontWeight: '600',
+        fontSize: moderateScale(11),
+        color: '#AEAEB2',
+        fontFamily: fontFamily.P_REGULAR,
         marginTop: verticalScale(2),
     },
     toggleLeftGroup: {
@@ -84,13 +85,14 @@ const styles = StyleSheet.create({
         flex: 1,
     },
     settingLabel: {
-        fontSize: moderateScale(14),
-        fontWeight: '600',
-        color: '#111111',
+        fontSize: moderateScale(13),
+        fontFamily: fontFamily.P_REGULAR,
+        color: '#222222',
     },
     settingSubtext: {
         fontSize: moderateScale(11),
-        color: '#7C8087',
+        fontFamily: fontFamily.P_REGULAR,
+        color: '#AEAEB2',
         marginTop: verticalScale(2),
     },
 });

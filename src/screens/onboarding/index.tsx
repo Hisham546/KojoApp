@@ -4,8 +4,10 @@ import { SafeAreaView } from 'react-native-safe-area-context';
 
 import { styles } from './styles';
 import { Images } from '../../assets/images';
+import Ionicons from '@react-native-vector-icons/ionicons';
+import { moderateScale } from 'react-native-size-matters';
 
-const OnboardingScreen = ({navigation}) => {
+const OnboardingScreen = ({ navigation }) => {
   return (
     <SafeAreaView style={styles.container}>
       <View style={styles.imageContainer}>
@@ -29,7 +31,7 @@ const OnboardingScreen = ({navigation}) => {
       <View style={styles.buttonOuter}>
         <Pressable style={styles.nextButton}
           onPress={() => navigation.navigate('Login')}>
-          <Text style={styles.arrow}>›</Text>
+          <Ionicons name="chevron-forward" size={moderateScale(25)} color="white" />
         </Pressable>
       </View>
     </SafeAreaView>

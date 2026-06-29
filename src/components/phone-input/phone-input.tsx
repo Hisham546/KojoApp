@@ -12,6 +12,7 @@ import {
 import { COUNTRIES } from './countries';
 import { Country, PhoneInputProps } from './modal';
 import styles from './styles';
+import { verticalScale } from 'react-native-size-matters';
 
 const PhoneInput: React.FC<PhoneInputProps> = ({
   label,
@@ -32,7 +33,7 @@ const PhoneInput: React.FC<PhoneInputProps> = ({
   };
 
   return (
-    <View>
+    <View style={{ marginBottom: verticalScale(10),}}>
       {label ? <Text style={styles.label}>{label}</Text> : null}
 
       <View style={styles.row}>

@@ -20,7 +20,7 @@ const styles = StyleSheet.create({
         justifyContent: 'space-evenly',
         alignItems: 'center',
         flexDirection: 'row',
-        backgroundColor: 'black',
+        backgroundColor: '#346AFD',
         width: deviceWidth * 0.80
 
 

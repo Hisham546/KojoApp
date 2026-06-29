@@ -4,6 +4,7 @@ import {
   verticalScale,
   moderateScale,
 } from 'react-native-size-matters';
+import fontFamily from '../../themes/fontFamily';
 
 export const styles = StyleSheet.create({
   container: {
@@ -30,18 +31,19 @@ export const styles = StyleSheet.create({
   },
 
   title: {
-    fontSize: moderateScale(30),
+    fontSize: moderateScale(28),
     lineHeight: moderateScale(38),
-    fontWeight: '300',
+   fontFamily:fontFamily.P_REGULAR,
     color: '#000000',
     marginBottom: verticalScale(12),
   },
 
   description: {
-    fontSize: moderateScale(16),
-    lineHeight: moderateScale(24),
+    fontSize: moderateScale(14),
+    lineHeight: moderateScale(20),
     color: '#000000',
-   // width: '82%',
+     fontFamily:fontFamily.P_REGULAR,
+
   },
   buttonOuter: {
     position: 'absolute',
@@ -61,9 +63,9 @@ export const styles = StyleSheet.create({
   },
 
   nextButton: {
-    width: scale(60),
-    height: scale(60),
-    borderRadius: scale(31),
+    width: scale(58),
+    height: scale(58),
+    borderRadius: scale(29),
 
     backgroundColor: '#3467F6',
 

@@ -30,7 +30,7 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         paddingHorizontal: scale(20),
         paddingVertical: verticalScale(12),
-        backgroundColor: 'transparent',
+        backgroundColor: '#e4ebfe',
     },
     iconButton: {
         width: scale(40),

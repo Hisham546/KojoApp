@@ -1,13 +1,16 @@
 import { StyleSheet } from 'react-native';
 import { scale, verticalScale, moderateScale } from 'react-native-size-matters';
+import fontFamily from '../../themes/fontFamily';
 export const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#F8FAFC',
+       backgroundColor: '#e4ebfe',
   },
   scrollContent: {
     paddingHorizontal: scale(20),
     paddingBottom: verticalScale(40),
+    backgroundColor: 'white',
+    borderRadius: moderateScale(24),
   },
   avatarSection: {
     alignItems: 'center',
@@ -30,7 +33,7 @@ export const styles = StyleSheet.create({
   },
   profileName: {
     fontSize: moderateScale(20),
-    fontWeight: '700',
+    fontFamily:fontFamily.P_MEDIUM,
     color: '#111111',
     marginTop: verticalScale(12),
   },
@@ -43,10 +46,9 @@ export const styles = StyleSheet.create({
   },
   cardContainer: {
     backgroundColor: '#FFFFFF',
-    borderRadius: moderateScale(24),
+
     paddingHorizontal: scale(16),
     paddingVertical: verticalScale(8),
-    borderWidth: 1,
-    borderColor: '#F1F5F9',
+
   },
 });
