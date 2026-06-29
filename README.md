@@ -95,3 +95,28 @@ To learn more about React Native, take a look at the following resources:
 - [Learn the Basics](https://reactnative.dev/docs/getting-started) - a **guided tour** of the React Native **basics**.
 - [Blog](https://reactnative.dev/blog) - read the latest official React Native **Blog** posts.
 - [`@facebook/react-native`](https://github.com/facebook/react-native) - the Open Source; GitHub **repository** for React Native.
+
+
+
+
+
+
+
+
+    tabBar: {
+        position: 'absolute',
+        left: scale(16),
+        right: scale(16),
+        height: verticalScale(64),
+        backgroundColor: '#FFFFFF',
+        borderRadius: moderateScale(32),
+        borderTopWidth: 0,
+        shadowColor: '#000',
+        shadowOffset: { width: 0, height: 4 },
+        shadowOpacity: 0.04,
+        shadowRadius: 12,
+        elevation: 8,
+        alignItems: 'center',
+        justifyContent: 'center',
+        paddingBottom: 0, 
+    },

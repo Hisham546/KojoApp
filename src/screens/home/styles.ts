@@ -1,20 +1,21 @@
 import { StyleSheet } from 'react-native';
 import { scale, verticalScale, moderateScale } from 'react-native-size-matters';
+import fontFamily from '../../themes/fontFamily';
 export const styles = StyleSheet.create({
-container: {
+  container: {
     flex: 1,
     backgroundColor: '#F8FAFC',
     position: 'relative',
   },
   scrollContent: {
     paddingHorizontal: scale(20),
-    paddingBottom: verticalScale(30), 
+    paddingBottom: verticalScale(70),
   },
   headerContainer: {
     flexDirection: 'row',
     justifyContent: 'space-between',
     alignItems: 'center',
-    marginTop: verticalScale(16),  
+    marginTop: verticalScale(16),
     marginBottom: verticalScale(24),
     width: '100%',
   },
@@ -24,18 +25,17 @@ container: {
   },
   greetingText: {
     fontSize: moderateScale(24),
-    fontWeight: '700',
+    fontFamily: fontFamily.P_BOLD,
     color: '#111111',
     letterSpacing: -0.5,
   },
   subtitleText: {
     fontSize: moderateScale(14),
     color: '#7C8087',
-    marginTop: verticalScale(4),
-    fontWeight: '400',
+    fontFamily: fontFamily.REGULAR,
   },
   notificationContainer: {
-    width: scale(44),   
+    width: scale(44),
     height: scale(44),
     borderRadius: moderateScale(16),
     backgroundColor: '#FFFFFF',

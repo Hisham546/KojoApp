@@ -17,6 +17,7 @@ import {
 } from 'react-native-size-matters';
 
 import dimensions from '../../../utils/dimensions';
+import fontFamily from '../../../themes/fontFamily';
 
 const { deviceHeight, deviceWidth } = dimensions
 const SCORE = 704;
@@ -24,7 +25,7 @@ const MIN = 400;
 const MAX = 850;
 const WIDTH = scale(330);
 
-const HEIGHT = verticalScale(185); 
+const HEIGHT = verticalScale(185);
 
 const RADIUS = scale(120);
 
@@ -173,12 +174,12 @@ export default CreditScoreCard;
 
 const styles = StyleSheet.create({
     container: {
-       backgroundColor: '#FFFFFF',
+        backgroundColor: '#FFFFFF',
         borderRadius: scale(28),
         paddingVertical: verticalScale(24),
         paddingHorizontal: scale(16),
         alignItems: 'center',
-        justifyContent: 'center', 
+        justifyContent: 'center',
         width: '100%',
 
     },
@@ -191,43 +192,41 @@ const styles = StyleSheet.create({
     },
 
     status: {
-        fontSize: moderateScale(16),
+        fontSize: moderateScale(15),
+        fontFamily: fontFamily.P_REGULAR,
         color: '#6F6F82',
     },
     score: {
         fontSize: moderateScale(48),
-        fontWeight: '700',
+        fontFamily: fontFamily.P_BOLD,
         color: '#2D2D4A',
     },
     points: {
         fontSize: moderateScale(16),
+        fontFamily: fontFamily.P_REGULAR,
         color: '#24C75A',
-        fontWeight: '600',
+
     },
 
     footer: {
         width: deviceWidth * 0.80,
-
         flexDirection: 'row',
         justifyContent: 'space-between',
         alignItems: 'center',
-  
     },
-
     date: {
         flexDirection: 'row',
         alignItems: 'center',
     },
-
     dateText: {
         marginLeft: scale(5),
         color: '#8D8D98',
         fontSize: moderateScale(13),
+          fontFamily: fontFamily.P_REGULAR,
     },
-
     range: {
-        fontSize: moderateScale(18),
-        fontWeight: '600',
+        fontSize: moderateScale(16),
+        fontFamily: fontFamily.P_REGULAR,
         color: '#2D2D4A',
     },
 });

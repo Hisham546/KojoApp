@@ -2,6 +2,7 @@ import React from 'react';
 import { View, Text, StyleSheet, Pressable } from 'react-native';
 import { scale, verticalScale, moderateScale } from 'react-native-size-matters';
 import Ionicons from '@react-native-vector-icons/ionicons';
+import fontFamily from '../../../themes/fontFamily';
 
 const QuickActions = () => {
  
@@ -91,8 +92,8 @@ const styles = StyleSheet.create({
   },
   actionLabel: {
     fontSize: moderateScale(12),
-    fontWeight: '500',
-    color: '#4B5563',
+     fontFamily: fontFamily.P_REGULAR,
+    color: '#666666',
     textAlign: 'center',
     lineHeight: moderateScale(15),
   },

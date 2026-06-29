@@ -1,39 +1,52 @@
 import { StyleSheet } from 'react-native';
-
+import { scale, verticalScale, moderateScale } from 'react-native-size-matters';
 export const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#FFFFFF',
+    backgroundColor: '#F8FAFC',
   },
-  content: {
-    flex: 1,
+  scrollContent: {
+    paddingHorizontal: scale(20),
+    paddingBottom: verticalScale(40),
+  },
+  avatarSection: {
+    alignItems: 'center',
+    marginVertical: verticalScale(20),
+  },
+  avatarOutline: {
+    width: scale(110),
+    height: scale(110),
+    borderRadius: scale(55),
+    borderWidth: 2,
+    borderColor: '#3B74FF',
     justifyContent: 'center',
     alignItems: 'center',
-    paddingHorizontal: 24,
   },
-  title: {
-    fontSize: 28,
+  userAvatarImage: {
+    width: scale(110),
+    height: scale(110),
+    borderRadius: scale(55),
+
+  },
+  profileName: {
+    fontSize: moderateScale(20),
     fontWeight: '700',
-    color: '#000000',
-    marginBottom: 8,
-    textAlign: 'center',
+    color: '#111111',
+    marginTop: verticalScale(12),
   },
-  subtitle: {
-    fontSize: 16,
-    color: '#666666',
-    textAlign: 'center',
+  sectionTitle: {
+    fontSize: moderateScale(15),
+    fontWeight: '700',
+    color: '#111111',
+    marginTop: verticalScale(20),
+    marginBottom: verticalScale(10),
   },
-  button: {
-    marginHorizontal: 24,
-    marginBottom: 24,
-    paddingVertical: 16,
-    borderRadius: 12,
-    backgroundColor: '#000000',
-    alignItems: 'center',
-  },
-  buttonText: {
-    fontSize: 16,
-    fontWeight: '600',
-    color: '#FFFFFF',
+  cardContainer: {
+    backgroundColor: '#FFFFFF',
+    borderRadius: moderateScale(24),
+    paddingHorizontal: scale(16),
+    paddingVertical: verticalScale(8),
+    borderWidth: 1,
+    borderColor: '#F1F5F9',
   },
 });

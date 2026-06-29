@@ -4,10 +4,10 @@ import Ionicons from '@react-native-vector-icons/ionicons';
 import HomeScreen from '../../screens/home';
 import MessageScreen from '../../screens/message';
 import ProfileScreen from '../../screens/profile';
-import { Text, View } from 'react-native';
-import { moderateScale, verticalScale } from 'react-native-size-matters';
-
-
+import { Text, View, StyleSheet, Image } from 'react-native';
+import { scale, moderateScale, verticalScale } from 'react-native-size-matters';
+import { Images } from '../../assets/images';
+import fontFamily from '../../themes/fontFamily';
 
 const Tab = createBottomTabNavigator();
 
@@ -16,59 +16,36 @@ const BottomTabNavigator = () => {
         <Tab.Navigator
             screenOptions={({ route }) => ({
                 headerShown: false,
-
                 tabBarShowLabel: false,
-
-                tabBarStyle: {
-                    height: 70,
-                    borderTopWidth: 0,
-                    elevation: 10,
-                    backgroundColor: '#FFFFFF',
-                },
-
+                tabBarStyle: styles.tabBar,
+                tabBarItemStyle: styles.tabBarItem,
                 tabBarIcon: ({ focused }) => {
-                    let iconName;
-
-                    switch (route.name) {
-                        case 'Home':
-                            iconName = focused ? 'home' : 'home-outline';
-                            break;
-
-                        case 'Messages':
-                            iconName = focused ? 'chatbubble' : 'chatbubble-outline';
-                            break;
-
-                        case 'Profile':
-                            iconName = focused ? 'person-circle' : 'person-circle-outline';
-                            break;
-
-                        default:
-                            iconName = 'ellipse';
-                    }
-
                     return (
-                        <View
-                            style={{
-                                alignItems: 'center',
-                                justifyContent: 'center',
-                            }}>
-                            <Ionicons
-                                name={iconName}
-                                size={24}
-                                color={focused ? '#3467F6' : '#BDBDBD'}
-                            />
+                        <View style={styles.iconContainer}>
+
+
+                            {route.name === 'Profile' ? (
+                                <Image
+                                    source={Images.userAvatar}
+                                    style={[
+                                        styles.userAvatarImage,
+                                        focused && styles.userAvatarImageFocused
+                                    ]}
+                                    resizeMode="cover"
+                                />
+                            ) : (
+                                <Ionicons
+                                    name={route.name === 'Home' ? (focused ? 'home' : 'home-outline') : (focused ? 'chatbox-ellipses' : 'chatbox-ellipses-outline')}
+                                    size={moderateScale(22)}
+                                    color={focused ? '#3467F6' : '#9CA3AF'}
+                                />
+                            )}
 
                             {focused && (
                                 <Text
                                     numberOfLines={1}
                                     adjustsFontSizeToFit
-                                    style={{
-                                        fontSize: moderateScale(10),
-                                        lineHeight: moderateScale(14),
-                                        color: '#3467F6',
-                                        marginTop: verticalScale(4),
-                                        fontWeight: '600',
-                                    }}>
+                                    style={styles.activeLabel}>
                                     {route.name}
                                 </Text>
                             )}
@@ -82,5 +59,59 @@ const BottomTabNavigator = () => {
         </Tab.Navigator>
     );
 };
+
+const styles = StyleSheet.create({
+
+
+    tabBar: {
+        position: 'absolute',
+        left: scale(16),
+        right: scale(16),
+        height: verticalScale(64),
+        backgroundColor: '#FFFFFF',
+        borderRadius: moderateScale(32),
+        borderTopWidth: 0,
+        shadowColor: '#000',
+        shadowOffset: { width: 0, height: 4 },
+        shadowOpacity: 0.04,
+        shadowRadius: 12,
+        elevation: 8,
+        alignItems: 'center',
+        justifyContent: 'center',
+        paddingBottom: 0,
+    },
+    tabBarItem: {
+        height: '100%',
+        justifyContent: 'center',
+        alignItems: 'center',
+    },
+    iconContainer: {
+        alignItems: 'center',
+        justifyContent: 'center',
+        height: '100%',
+        width: '100%',
+        top: verticalScale(15)
+
+
+    },
+    activeLabel: {
+        fontSize: moderateScale(15),
+        lineHeight: moderateScale(18),
+        color: '#3467F6',
+        fontFamily: fontFamily.P_MEDIUM,
+    },
+    userAvatarImage: {
+        width: scale(26),
+        height: scale(26),
+        borderRadius: scale(13),
+        backgroundColor: '#E2E8F0',
+        borderWidth: 1,
+        borderColor: '#E2E8F0',
+    },
+    userAvatarImageFocused: {
+        borderWidth: 2,
+        borderColor: '#3467F6',
+    },
+});
 
 export default BottomTabNavigator;

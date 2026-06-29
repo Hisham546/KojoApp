@@ -1,5 +1,6 @@
 import React from 'react';
 import { Pressable, Text, StyleSheet } from 'react-native';
+import { verticalScale } from 'react-native-size-matters';
 
 const FloatingButton = () => {
   return (
@@ -8,7 +9,7 @@ const FloatingButton = () => {
         styles.button,
         pressed && styles.pressed
       ]}
-      onPress={() => console.log('FAB Pressed')}
+      
     >
       <Text style={styles.icon}>+</Text>
     </Pressable>
@@ -19,7 +20,7 @@ const styles = StyleSheet.create({
   button: {
     position: 'absolute',
     right: 16,
-    bottom: 16,
+   bottom: verticalScale(96),
     width: 56,
     height: 56,
     borderRadius: 28,

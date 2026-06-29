@@ -2,6 +2,7 @@ import React from 'react';
 import { View, Text, StyleSheet, Dimensions } from 'react-native';
 import { LineChart } from 'react-native-gifted-charts';
 import { scale, verticalScale, moderateScale } from 'react-native-size-matters';
+import fontFamily from '../../../themes/fontFamily';
 
 const screenWidth = Dimensions.get('window').width;
 
@@ -14,15 +15,13 @@ const CreditHistory = () => {
         { value: 750, label: 'May' },
     ];
 
-    // THE FIX FOR THE CHART SPACING: 
-    // Since we reduced paddingHorizontal on the card, we have more horizontal canvas space.
-    // Changing the subtraction offset from 140 to 110 stretches the chart perfectly across the wider card area.
+
     const dynamicSpacing = (screenWidth - scale(110)) / 4;
 
     return (
         <View style={styles.container}>
             <View style={styles.card}>
-                <Text style={styles.title}>Credit History</Text>
+                <Text style={styles.title}>Credit Score History</Text>
                 <View style={styles.chartWrapper}>
                     <LineChart
                         data={data}
@@ -37,13 +36,13 @@ const CreditHistory = () => {
                         xAxisThickness={0}
                         yAxisTextStyle={styles.axisText}
                         xAxisLabelTextStyle={styles.axisText}
-                        yAxisOffset={650}      
-                        maxValue={200}        
-                        noOfSections={4}       
-                        stepValue={50}         
+                        yAxisOffset={650}
+                        maxValue={200}
+                        noOfSections={4}
+                        stepValue={50}
                         initialSpacing={moderateScale(25)}
                         endSpacing={moderateScale(25)}
-                        spacing={dynamicSpacing} 
+                        spacing={dynamicSpacing}
                         hideDataPoints
                     />
                 </View>
@@ -54,31 +53,31 @@ const CreditHistory = () => {
 
 const styles = StyleSheet.create({
     container: {
-        width: '100%', 
+        width: '100%',
         marginVertical: verticalScale(10),
     },
     card: {
         backgroundColor: '#FFFFFF',
         borderRadius: scale(28),
         paddingVertical: verticalScale(24),
-        paddingHorizontal: scale(8), 
+        paddingHorizontal: scale(8),
 
     },
     title: {
-        fontSize: moderateScale(18),
-        fontWeight: '700',
-        color: '#1A1C1E',
+        fontSize: moderateScale(16),
+        fontFamily: fontFamily.P_MEDIUM,
+        color: '#222222',
         marginBottom: verticalScale(20),
         paddingLeft: scale(8),
     },
     chartWrapper: {
-        marginLeft: scale(-6), 
+        marginLeft: scale(-6),
         marginBottom: verticalScale(4),
     },
     axisText: {
-        color: '#7C8087',
+        color: '#666666D9',
         fontSize: moderateScale(11),
-        fontWeight: '500',
+          fontFamily: fontFamily.P_REGULAR,
     },
 });
 

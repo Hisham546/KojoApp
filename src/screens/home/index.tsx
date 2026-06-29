@@ -18,6 +18,7 @@ const HomeScreen = () => {
     <SafeAreaView style={styles.container} edges={['top', 'left', 'right']}>
   
       <ScrollView
+      bounces={false}
         showsVerticalScrollIndicator={false}
         contentContainerStyle={styles.scrollContent}
       >
