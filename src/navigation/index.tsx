@@ -22,6 +22,7 @@ const MainNavigation = () => {
                     name="Login"
                     component={LoginScreen} />
                 <Stack.Screen
+                  options={{ headerShown: false }}
                     name="BottomTabs"
                     component={BottomTabNavigator}
                 />
