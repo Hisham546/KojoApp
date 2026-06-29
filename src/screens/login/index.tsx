@@ -9,14 +9,17 @@ import PhoneInput from '../../components/phone-input/phone-input';
 import { DEFAULT_COUNTRY_CODE } from '../../components/phone-input/countries';
 import { styles } from './styles';
 
-const LoginScreen = () => {
+const LoginScreen = ({navigation}) => {
     const [countryCode, setCountryCode] = useState(DEFAULT_COUNTRY_CODE);
     const [phoneNumber, setPhoneNumber] = useState('');
     const [firstName, setFirstName] = useState('');
     const [lastName, setLastName] = useState('');
     const [email, setEmail] = useState('');
 
-    const handleLogin = () => { };
+    const handleLogin = () => {
+
+         navigation.navigate('BottomTabs')
+     };
 
     return (
         <SafeAreaView style={styles.container}>

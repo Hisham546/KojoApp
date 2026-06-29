@@ -1,26 +1,37 @@
 import React from 'react';
-import { Pressable, Text, View } from 'react-native';
+import { Image, Pressable, Text, View } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 
 import { styles } from './styles';
+import { Images } from '../../assets/images';
 
-const OnboardingScreen = () => {
-  const handleContinue = () => {
-    // TODO: Navigate to the next screen
-  };
-
+const OnboardingScreen = ({navigation}) => {
   return (
     <SafeAreaView style={styles.container}>
-      <View style={styles.content}>
-        <Text style={styles.title}>Welcome to Kojo</Text>
-        <Text style={styles.subtitle}>
-          Build your onboarding flow here
+      <View style={styles.imageContainer}>
+
+        <Image
+          source={Images.onboardingBanner}
+          style={styles.image}
+          resizeMode="cover"
+        />
+      </View>
+
+      <View style={styles.bottomContainer}>
+        <Text style={styles.title}>Your Credit Score</Text>
+
+        <Text style={styles.description}>
+          We provide you with the tools to monitor, understand, and improve your
+          credit score.
         </Text>
       </View>
 
-      <Pressable style={styles.button} onPress={handleContinue}>
-        <Text style={styles.buttonText}>Continue</Text>
-      </Pressable>
+      <View style={styles.buttonOuter}>
+        <Pressable style={styles.nextButton}
+          onPress={() => navigation.navigate('Login')}>
+          <Text style={styles.arrow}>›</Text>
+        </Pressable>
+      </View>
     </SafeAreaView>
   );
 };
